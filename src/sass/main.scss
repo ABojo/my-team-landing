@@ -1,0 +1,46 @@
+:root {
+  --color-midnight-green: #014e56;
+  --color-light-coral: #f67e7e;
+  --color-white: #ffffff;
+  --color-rapture-blue: #79c8c7;
+  --color-police-blue: #2c6269;
+  --color-jungle-green: #004047;
+  --color-sacramento-green: #012f34;
+  --color-dark-green: #002529;
+
+  --fs-1: 6.25rem;
+  --fs-2: 4rem;
+  --fs-3: 3rem;
+  --fs-4: 1.125rem;
+  --fs-5: 0.9375rem;
+
+  --fw-semi: 600;
+  --fw-bold: 700;
+
+  --lh-body-1: 1.75rem;
+  --lh-body-2: 1.5625rem;
+
+  --layout-max-width: 70rem;
+  --layout-width: 90%;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Livvic", sans-serif;
+}
+
+body {
+  background-color: var(--color-midnight-green);
+}
+
+button,
+input {
+  font: inherit;
+}
