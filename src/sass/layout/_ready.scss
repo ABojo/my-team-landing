@@ -1,0 +1,40 @@
+@use "../abstracts/mixins" as *;
+
+.ready {
+  background-color: var(--color-red);
+  padding-block: 4.5rem;
+  position: relative;
+
+  &__graphic {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__inner {
+    @include layout-center;
+    max-width: 57rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__heading {
+    color: var(--color-sacramento-green);
+    font-size: var(--fs-3);
+  }
+
+  &__cta {
+    border: 2px solid var(--color-sacramento-green);
+    color: var(--color-sacramento-green);
+    text-decoration: none;
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: var(--color-sacramento-green);
+      color: var(--color-white);
+    }
+  }
+}
