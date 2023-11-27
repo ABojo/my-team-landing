@@ -1,3 +1,5 @@
+@use "./pages/home/hero";
+@use "./pages/home/features";
 @use "./layout/header";
 
 :root {
@@ -40,6 +42,7 @@ html {
 
 body {
   background-color: var(--color-midnight-green);
+  overflow-x: hidden;
 }
 
 button,
