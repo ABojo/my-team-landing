@@ -1,0 +1,73 @@
+@use "../abstracts/mixins" as *;
+
+.footer {
+  padding-block: 2.75rem;
+  color: var(--color-white);
+  background-color: var(--color-dark-green);
+
+  &__inner {
+    @include layout-center;
+    display: grid;
+    grid-template-columns: max-content max-content 1fr;
+    grid-column-gap: 8rem;
+    grid-row-gap: 1.75rem;
+    grid-template-areas:
+      "logo details socials"
+      "nav details copyright";
+  }
+
+  &__details {
+    grid-area: details;
+    list-style-type: none;
+    opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  &__nav {
+    grid-area: nav;
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    a {
+      color: var(--color-white);
+      font-size: var(--fs-4);
+      text-decoration: none;
+      transition: all 0.2s;
+
+      &:hover {
+        color: var(--color-red);
+      }
+    }
+  }
+
+  &__copyright {
+    grid-area: copyright;
+    opacity: 0.5;
+    justify-self: end;
+    font-size: var(--fs-5);
+    align-self: end;
+  }
+
+  &__socials {
+    grid-area: socials;
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+    justify-self: end;
+
+    a {
+      color: var(--color-white);
+      transition: all 0.2s;
+
+      &:hover {
+        color: var(--color-red);
+      }
+    }
+  }
+}
