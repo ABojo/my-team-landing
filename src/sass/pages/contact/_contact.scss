@@ -1,0 +1,136 @@
+@use "../../abstracts/mixins" as *;
+
+.contact {
+  @include layout-center;
+  padding-block: 7.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  color: var(--color-white);
+
+  &__heading {
+    font-size: var(--fs-2);
+    margin-bottom: 2rem;
+  }
+
+  &__sub {
+    color: var(--color-red);
+    font-size: 2rem;
+  }
+
+  &__list {
+    list-style-type: none;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+      height: 4.5rem;
+      width: 4.5rem;
+    }
+
+    p {
+      font-size: var(--fs-4);
+      line-height: var(--lh-body-1);
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.75rem;
+  position: relative;
+
+  &__field {
+    position: relative;
+    width: 100%;
+  }
+
+  &__label {
+    @include screen-reader-only;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    color: var(--color-white);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-5);
+    padding-inline: 1rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--color-white);
+
+    &::placeholder {
+      color: var(--color-white);
+      opacity: 0.75;
+    }
+
+    &--large {
+      padding-bottom: 4rem;
+      resize: none;
+    }
+  }
+
+  &__submit {
+    background-color: var(--color-white);
+    padding: 1rem 2rem;
+    font-size: var(--fs-4);
+    border-radius: 2rem;
+    border: none;
+    color: var(--color-dark-green);
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 1rem;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    left: 1rem;
+    top: 110%;
+    font-size: 0.625rem;
+    font-style: italic;
+    color: var(--color-red);
+    display: none;
+  }
+
+  &__field--invalid &__input {
+    border-bottom: 1px solid var(--color-red);
+  }
+
+  &__field--invalid &__error {
+    display: block;
+  }
+
+  &__success {
+    position: absolute;
+    font-size: var(--fs-3);
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+
+  &--submitted &__field,
+  &--submitted &__submit {
+    display: none;
+  }
+
+  &--submitted &__success {
+    display: block;
+  }
+}
